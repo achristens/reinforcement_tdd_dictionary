@@ -16,7 +16,7 @@ class Dictionary
   end
 
   def keywords
-    @entries.keys
+    @entries.keys.sort
   end
 
   def include?(word)
@@ -28,7 +28,7 @@ class Dictionary
   end
 
   def find(word)
-    @entries.keys.any? { |k| k.include? word }
+    @entries.select { |k, v| k.start_with?(word) }
   end
-  
+
 end
