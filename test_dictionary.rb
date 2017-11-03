@@ -22,17 +22,17 @@ class TestDictionary < MiniTest::Test
     # skip
     @d.add('fish')
     assert_equal({'fish' => nil}, @d.entries)
-    # assert_equal ['fish'], @d.keywords
+    assert_equal ['fish'], @d.keywords
   end
 
   def test_check_if_keyword_exists
-    skip
+    # skip
     # refute asserts falsy, !assert
     refute @d.include?('fish')
   end
 
   def test_check_if_keyword_exists_after_add
-    skip
+    # skip
     refute @d.include?('fish') # if the method is empty, this test passes
     @d.add('fish')
     assert @d.include?('fish') # confirms that it actually checks
@@ -40,13 +40,13 @@ class TestDictionary < MiniTest::Test
   end
 
   def test_does_not_include_prefix
-    skip
+    # skip
     @d.add('fish')
     refute @d.include?('fi')
   end
 
   def test_does_not_find_word_in_empty_dictionary
-    skip
+    # skip
     assert_empty @d.find('fi')
   end
 

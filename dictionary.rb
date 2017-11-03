@@ -19,5 +19,16 @@ class Dictionary
     @entries.keys
   end
 
+  def include?(word)
+    if @entries.key?(word)
+      true
+    else
+      false
+    end
+  end
 
+  def find(word)
+    @entries.keys.any? { |k| k.include? word }
+  end
+  
 end
